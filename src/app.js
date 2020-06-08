@@ -60,11 +60,14 @@ app.delete("/repositories/:id", (request, response) => {
     return response.status(400).json({});
   }
 
-  repositories.splice(index, index + 1);
+  console.log(index);
+
+  repositories.splice(index, 1);
+  console.log(repositories);
 
   return response.status(204).json({});
 });
-
+ 
 app.post("/repositories/:id/like", (request, response) => {
   const { id } = request.params;
 
